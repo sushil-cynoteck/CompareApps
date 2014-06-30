@@ -1,0 +1,556 @@
+﻿@model CompareApps.Models.AccountMainModel
+
+
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<div id="dvMain">
+
+    <div class="block">
+        <div class="formLabel">
+            Account Type
+        </div>
+        @Html.DropDownListFor(model => model.UserTypeID, (IEnumerable<SelectListItem>)ViewBag.UserList, "--Please  Select an User Type--", new { Class = "ddlTypes", onchange = "SelectedIndexChanged()" })
+
+
+    </div>
+
+    <br />
+    <div id="dvUserRegistration" class="dvUserRegistration Hide">
+        @using (Html.BeginForm(Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "form1" })))
+        {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.HiddenFieldVal1)
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.UserName)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.UserName)
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.UserName)
+
+            </div>
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.FirstName)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.FirstName)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.FirstName)
+
+            </div>
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.LastName)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.LastName)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.LastName)
+
+            </div>
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.Email)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.Email)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.Email)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.Country)
+                </div>
+                @Html.DropDownListFor(model => model.RegisterUserModel.Country, (SelectList)ViewBag.CountryList, "--Please Select a Country--", new { @Class = "ddlTypes" })
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.Country)
+
+            </div>
+            
+          
+            <div id="dvUserState" class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.State)
+                </div>
+                @Html.DropDownListFor(model => model.RegisterUserModel.State, new SelectList(string.Empty, "Value", "Text"), "--Please select a State--", new { @class = "ddlTypes" })
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.State)
+
+            </div>
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.Password)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.Password)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.Password)
+                <div id="strength" class="strength Hide"></div>
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.ConfirmPassword)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.ConfirmPassword)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.ConfirmPassword)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.DateOfBirth)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.DateOfBirth)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.DateOfBirth)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.Gender)
+                </div>
+                @Html.DropDownListFor(model => model.RegisterUserModel.Gender, (SelectList)ViewBag.GenderList, "--Select--", new { @class = "ddlTypes" })
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.Gender)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.MobileNumber)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.MobileNumber)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.MobileNumber)
+
+            </div>
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.PhoneMakeOrModel)
+                </div>
+                @Html.EditorFor(model => model.RegisterUserModel.PhoneMakeOrModel)
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.PhoneMakeOrModel)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.TermsofService)
+                </div>
+                @Html.CheckBoxFor(model => model.RegisterUserModel.TermsofService, new { @class = "chkToS" })
+
+
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.TermsofService)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterUserModel.Captcha)
+                   
+                </div>
+                 <div>
+                 <a href="@Url.Action("Register")">
+                        <img alt="Captcha" src="@Url.Action("CaptchaImage")"/>
+                    </a>
+               <div style="margin-top: -2.9%;margin-left:52%;width:12.5%;overflow:hidden;" >
+                @Html.EditorFor(model => model.RegisterUserModel.Captcha, new {@class="cssCaptcha", autocomplete = "off" })
+                   </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.RegisterUserModel.Captcha)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                </div>
+                <div class="dvSubmit">
+                    <input type="submit" value="SUBMIT" name="SUBMIT" />
+                    <span class="Or">Or</span> <a id="cancel" href='@Url.Action("Login", "Account")'>Cancel</a>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div id="dvDeveloperRegistration" class="dvDeveloperRegistration Hide">
+        @using (Html.BeginForm(Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "form2" })))
+        {
+            @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(model => model.HiddenFieldVal2)
+
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.CompareAppsUrl)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.CompareAppsUrl)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.CompareAppsUrl)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.UserNameOrCompanyName)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.UserNameOrCompanyName)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.UserNameOrCompanyName)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.FirstName)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.FirstName)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.FirstName)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.LastName)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.LastName)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.LastName)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.Email)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.Email)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.Email)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.Country)
+                </div>
+                @Html.DropDownListFor(model => model.RegisterDeveloperModel.Country, (SelectList)ViewBag.CountryList, "--Please Select a Country--", new { @Class = "ddlTypes" })
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.Country)
+
+            </div>
+            
+            <div id="dvDeveloperState" class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.State)
+                </div>
+                @Html.DropDownListFor(model => model.RegisterDeveloperModel.State, new SelectList(string.Empty, "Value", "Text"), "--Please select a State--", new { @class = "ddlTypes" })
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.State)
+
+            </div>
+            
+            <div id="dvDeveloperCity" class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.City)
+                </div>
+                @Html.DropDownListFor(model => model.RegisterDeveloperModel.City, new SelectList(string.Empty, "Value", "Text"), "--Please select a City--", new { @class = "ddlTypes" })
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.City)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.Password)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.Password)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.Password)
+                <div id="strengthDP" class="strength Hide"></div>
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.ConfirmPassword)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.ConfirmPassword)
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.ConfirmPassword)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.Web)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.Web)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.Web)
+
+            </div>
+            
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.AddressLine1)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.AddressLine1)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.AddressLine1)
+
+            </div>
+            
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.AddressLine2)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.AddressLine2)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.AddressLine2)
+
+            </div>
+         
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.PostalCode)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.PostalCode)
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.PostalCode)
+
+            </div>
+            
+            
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.PhoneNumber)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.PhoneNumber)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.PhoneNumber)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                    @Html.LabelFor(model => model.RegisterDeveloperModel.TermsofService)
+                </div>
+                @Html.EditorFor(model => model.RegisterDeveloperModel.TermsofService)
+
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.TermsofService)
+
+            </div>
+            
+            
+            <div class="block">
+                <div class="formLabel">
+                   @Html.LabelFor(model => model.RegisterDeveloperModel.Captcha)
+                    
+                </div>
+                <div>
+                <a href="@Url.Action("Register")">
+                        <img alt="Captcha" src="@Url.Action("CaptchaImage")" />
+                    </a>
+                <div style="margin-top: -2.9%;margin-left:52%;width:12.5%;overflow:hidden;">
+                @Html.EditorFor(model => model.RegisterDeveloperModel.Captcha, new {@class="cssCaptcha", autocomplete = "off" })
+                    </div>
+</div>
+
+                @Html.ValidationMessageFor(model => model.RegisterDeveloperModel.Captcha)
+
+            </div>
+            
+            <div class="block">
+                <div class="formLabel">
+                </div>
+                <div class="dvSubmit">
+                    <input type="submit" value="SUBMIT" name="SUBMIT" />
+                    <span class="Or">Or</span> <a id="cancel1" href='@Url.Action("Login", "Account")'>Cancel</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base/css")
+    <script>
+        $(document).ready(function () {
+            $("#dvUserState").hide();
+            $("#dvDeveloperState").hide();
+            $("#dvDeveloperCiy").hide();
+
+            $("input:text,form").attr("autocomplete", "off");
+            //Dropdownlist Selectedchange event
+            $("#RegisterUserModel_Country").change(function () {
+                $("#RegisterUserModel_State").empty();
+               
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#RegisterUserModel_Country").val() },
+                    success: function (States) {
+                        $.each(States, function (i, state) {
+                            $("#RegisterUserModel_State").append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                            // here we are adding option for States
+                            if (States.length != 1) {
+                                $("#dvUserState").show();
+                            }
+                            else
+                            {
+                                $("#dvUserState").hide();
+                            }
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+
+
+            //Dropdownlist Selectedchange event
+            $("#RegisterDeveloperModel_Country").change(function () {
+                $("#RegisterDeveloperModel_State").empty();
+                
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#RegisterDeveloperModel_Country").val() },
+                    success: function (States) {
+                        $.each(States, function (i, state) {
+                            $("#RegisterDeveloperModel_State").append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                            // here we are adding option for States
+                            if (States.length != 1) {
+                                $("#dvDeveloperState").show();
+
+                            }
+                            else {
+                                $("#dvDeveloperState").hide();
+                                $("#dvDeveloperCity").hide();
+                            }
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+
+            //Dropdownlist Selectedchange event
+            $("#RegisterDeveloperModel_State").change(function () {
+                $("#RegisterDeveloperModel_City").empty();
+               
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetCityList")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#RegisterDeveloperModel_State").val() },
+                    success: function (Citys) {
+                        $.each(Citys, function (i, city) {
+                            $("#RegisterDeveloperModel_City").append('<option value="' + city.Value + '">' +
+                                 city.Text + '</option>');
+                            // here we are adding option for States
+                            if (Citys.length != 1) {
+                                $("#dvDeveloperCity").show();
+                            }
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+
+
+
+            //"Password" is the id of the password textbox
+            //yours may be different so make sure to change this if necessary
+            $("#RegisterUserModel_Password").keyup(function () {
+                var length = $("#RegisterUserModel_Password").val().length;
+                var colour = "";
+
+                if (length <= 4)
+                    colour = "red";
+                else if (length <= 7)
+                    colour = "orange";
+                else
+                    colour = "green";
+                $("#strength").addClass("Show");
+                $("#strength").css("background-color", colour);
+            });
+
+            $("#RegisterDeveloperModel_Password").keyup(function () {
+                var length = $("#RegisterDeveloperModel_Password").val().length;
+                var colour = "";
+
+                if (length <= 4)
+                    colour = "red";
+                else if (length <= 7)
+                    colour = "orange";
+                else
+                    colour = "green";
+                $("#strengthDP").addClass("Show");
+                $("#strengthDP").css("background-color", colour);
+            });
+        });
+
+
+        function SelectedIndexChanged(a) {
+            var selectedval = ($("#UserTypeID").val());
+            if (selectedval == 1) {
+                $('.dvUserRegistration').show();
+                $('.dvDeveloperRegistration').hide();
+                $("#HiddenFieldVal1").val("1")
+            }
+            if (selectedval == 2) {
+                $('.dvUserRegistration').hide();
+                $('.dvDeveloperRegistration').show();
+                $("#HiddenFieldVal2").val("2")
+            }
+        }
+
+    </script>
+}
+
+
+

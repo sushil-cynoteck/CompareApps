@@ -1,0 +1,61 @@
+﻿@model CompareApps.Models.LoginUserModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+  <div style="width: 30%; margin-left: auto; margin-right: auto;"><h3>Please Login to access this page</h3></div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div style="width: 30%; margin-left: auto; margin-right: auto; height: 50%; border: solid 1px #000; margin-top: 5%;">
+        <fieldset style="width: 100%; margin-left: 4%;">
+            <legend>Login</legend>
+          
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+
+                @Html.ValidationMessageFor(model => model.Email)
+
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password)
+
+                @Html.ValidationMessageFor(model => model.Password)
+
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RememberMe)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RememberMe)
+                @Html.ValidationMessageFor(model => model.RememberMe)
+            </div>
+
+            <div style="text-align: center;margin-bottom:1%;">
+                <input type="submit" value="Login" />
+                <a style ="font-weight:bold;font-style:italic;" href="Register">Register</a>
+                <a style ="font-weight:bold;font-style:italic;" href="ForgotPassword">Forgot Password</a>
+            </div>
+
+            
+
+        </fieldset>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

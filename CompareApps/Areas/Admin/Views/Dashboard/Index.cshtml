@@ -1,0 +1,23 @@
+﻿@model CompareApps.Models.AccountListModel
+@using CompareApps.Models
+@using CompareApps.Areas.Admin.Controllers
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Users";
+    
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section leftSideBar{
+    @Html.Partial("_DictionaryPartial", typeof(AccountModel))
+}
+
+@using (Html.BeginForm())
+{
+
+}

@@ -1,0 +1,243 @@
+﻿@model CompareApps.Models.AccountModel
+@using CompareApps.Models
+@{
+    ViewBag.Title = "Create User";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@section leftSideBar{
+    @Html.Partial("_DictionaryPartial", typeof(AccountModel))
+}
+<div style="margin-left: 10%;">
+
+      @ViewData["ErrorMessage"]
+    <h2>Create User</h2>
+
+  
+
+
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+
+        @Html.EditorFor(model => model.UserName)
+        @Html.ValidationMessageFor(model => model.UserName)
+    </div>
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+
+        @Html.EditorFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
+
+    </div>
+    
+    <div class="block">
+
+        <div class="formLabel">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+
+        @Html.EditorFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+    
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.Email)
+        </div>
+
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+        
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.Role)
+        </div>
+
+        @Html.DropDownListFor(model => model.Role, (SelectList)ViewBag.Roles, "--Select a role--", new { @Class = "ddlTypes1" })
+        @Html.ValidationMessageFor(model => model.Role)
+    </div>
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        @Html.EditorFor(model => model.Password)
+
+
+        @Html.ValidationMessageFor(model => model.Password)
+        <div id="strength" class="strength Hide"></div>
+    </div>
+            
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.ConfirmPassword)
+        </div>
+        @Html.EditorFor(model => model.ConfirmPassword)
+
+
+        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+
+    </div>
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        @Html.DropDownListFor(model => model.Country, (SelectList)ViewBag.CountryList, "--Please Select a Country--", new { @Class = "ddlTypes1" })
+
+    </div>
+            
+    <div id="dvState" class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.State)
+        </div>
+        @Html.DropDownListFor(model => model.State, new SelectList(string.Empty, "Value", "Text"), "--Please select a State--", new { @class = "ddlTypes1" })
+
+    </div>
+            
+    <div id="dvCity" class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.City)
+        </div>
+        @Html.DropDownListFor(model => model.City, new SelectList(string.Empty, "Value", "Text"), "--Please select a City--", new { @class = "ddlTypes1" })
+
+    </div>
+    
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.DateOfBirth)
+        </div>
+
+        @Html.EditorFor(model => model.DateOfBirth)
+        @Html.ValidationMessageFor(model => model.DateOfBirth)
+    </div>
+    
+    <div class="block">
+        <div class="formLabel">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+
+        @Html.DropDownListFor(model => model.Gender, (SelectList)ViewBag.GenderList, "--Select a Gender--", new { @Class = "ddlTypes1" })
+        @Html.ValidationMessageFor(model => model.Gender)
+
+    </div>
+
+
+    
+   
+    
+    <div class="block">
+        <div class="formLabel">
+        </div>
+        <div class="dvSubmit">
+            <input type="submit" value="SUBMIT" name="SUBMIT" />
+            <span class="Or">Or</span> <a id="cancel" href='@Url.Action("Index", "User")'>Cancel</a>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#dvState").hide();
+            $("#dvCity").hide();
+            $("input:text,form").attr("autocomplete", "off");
+            //Dropdownlist Selectedchange event
+            $("#Country").change(function () {
+                $("#State").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#Country").val() },
+                    success: function (States) {
+                        $.each(States, function (i, state) {
+                            $("#State").append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                            if (States.length != 1) {
+                                $("#dvState").show();
+                            }
+                            else
+                            {
+                                $("#dvState").hide();
+                                $("#dvCity").hide();
+                            }
+
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+
+
+
+
+            //Dropdownlist Selectedchange event
+            $("#State").change(function () {
+                $("#City").empty();
+               
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetCityList")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#State").val() },
+                    success: function (Citys) {
+                        $.each(Citys, function (i, city) {
+                            $("#City").append('<option value="' + city.Value + '">' +
+                                 city.Text + '</option>');
+                            // here we are adding option for States
+                            if (Citys.length != 1) {
+                                $("#dvCity").show();
+                            }
+                            else {
+                                $("#dvCity").hide();
+
+                            }
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+
+
+
+            //"Password" is the id of the password textbox
+            //yours may be different so make sure to change this if necessary
+            $("#Password").keyup(function () {
+                var length = $("#Password").val().length;
+                var colour = "";
+
+                if (length <= 4)
+                    colour = "red";
+                else if (length <= 7)
+                    colour = "orange";
+                else
+                    colour = "green";
+                $("#strength").addClass("Show");
+                $("#strength").css("background-color", colour);
+            });
+
+        });
+
+
+    </script>
+}

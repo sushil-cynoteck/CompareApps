@@ -1,0 +1,49 @@
+﻿@using CompareApps.Models
+@using CompareApps.Areas.Admin
+@model Type
+<div class="well sidebar-nav">
+    @*@MVC.Admin.OS.Name , @MVC.Admin.OSVersion.Name , @Model.Name*@
+    <ul class="nav nav-list">
+        <li class="nav-header">Dictionaries</li>
+        <li class="@(Model == typeof(CategoryModel) ? "active" : "")">
+            @Html.ActionLink("Categories","Index","Dashboard")
+        </li>
+        <li class="@(Model == typeof(OSPlatformModel) ? "active" : "")">
+            @Html.ActionLink("OS Platforms","Index","OSPlateforms")
+        </li>
+        <li class="@(Model == typeof(OSVersionModel) ? "active" : "")">
+            @*@Html.ActionLink("OS Versions", "Index","Dashboard")*@
+        </li>
+        <li class="@(Model == typeof(PhoneBrandModel) ? "active" : "")">
+            @Html.ActionLink("Phone Brands","Index","Dashboard")
+        </li>
+        <li class="@(Model == typeof(BrandTypeModel) ? "active" : "")">
+            @Html.ActionLink("Phone Brand Models", "Index","Dashboard")
+        </li>
+        <li class="@((Model == typeof(ApplicationModel)) || (Model == typeof(Applications_OSPlatformModel))  ? "active" : "")">
+            @Html.ActionLink("Applications", "Index","Dashboard")
+        </li>
+        <li class="@(Model == typeof(ContentPageModel) ? "active" : "")">
+            @Html.ActionLink("Static Pages", "Index","Dashboard")
+        </li>
+        <li class="@(Model == typeof(AccountModel) ? "active" : "")">
+            @Html.ActionLink("Users", "Index","User")
+        </li>
+        <li class="@(Model == typeof(SliderModel) ? "active" : "")">
+            @Html.ActionLink("Sliders", "Index","Dashboard")
+        </li>
+        <li class="@(Model == typeof(AdvertisementModel) ? "active" : "")">
+            @Html.ActionLink("Advertisements", "Index","Dashboard")
+        </li>
+        
+         <li class="@(Model == typeof(CommentsModel) ? "active" : "")">
+            @Html.ActionLink("Comments", "Index","Dashboard")
+        </li>
+    </ul>
+</div>
+@*<div>
+    <div> Please Select Dictionary  </div>
+    <div>
+  @Html.DropDownListFor(x => x.SelectedOption, Model.SelectOptions, new { @Class = "ddlTypes" })
+        </div>
+    </div>*@

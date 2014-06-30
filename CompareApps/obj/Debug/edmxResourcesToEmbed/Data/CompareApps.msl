@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CompareAppsBDModelStoreContainer" CdmEntityContainer="CompareAppsBDEntities">
+    <EntitySetMapping Name="Advertisements">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Advertisement">
+        <MappingFragment StoreEntitySet="Advertisements">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="OSPlatformRef" ColumnName="OSPlatformRef" />
+          <ScalarProperty Name="IsTop" ColumnName="IsTop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppDevelopers">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.AppDeveloper">
+        <MappingFragment StoreEntitySet="AppDeveloper">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="AppDevID" ColumnName="AppDevID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserNameORCompanyName" ColumnName="UserNameORCompanyName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CompareAppsURL" ColumnName="CompareAppsURL" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications_OSPlatforms">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Applications_OSPlatforms">
+        <MappingFragment StoreEntitySet="Applications_OSPlatforms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ApplicationRef" ColumnName="ApplicationRef" />
+          <ScalarProperty Name="OSPlatformRef" ColumnName="OSPlatformRef" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="VersionVariesWithDevice" ColumnName="VersionVariesWithDevice" />
+          <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SizeVariesWithDevice" ColumnName="SizeVariesWithDevice" />
+          <ScalarProperty Name="MarketURL" ColumnName="MarketURL" />
+          <ScalarProperty Name="PriceUSD" ColumnName="PriceUSD" />
+          <ScalarProperty Name="PriceEUR" ColumnName="PriceEUR" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationsnApps">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.ApplicationsnApp">
+        <MappingFragment StoreEntitySet="ApplicationsnApps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="InfoUrlFacebook" ColumnName="InfoUrlFacebook" />
+          <ScalarProperty Name="InfoUrlTwitter" ColumnName="InfoUrlTwitter" />
+          <ScalarProperty Name="Developer" ColumnName="Developer" />
+          <ScalarProperty Name="SiteUrl" ColumnName="SiteUrl" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="CategoryRef" ColumnName="CategoryRef" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+          <ScalarProperty Name="OSPlatforms" ColumnName="OSPlatforms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrandTypes">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.BrandType">
+        <MappingFragment StoreEntitySet="BrandTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneBrandRef" ColumnName="PhoneBrandRef" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentRef" ColumnName="ParentRef" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="LeftValue" ColumnName="LeftValue" />
+          <ScalarProperty Name="RightValue" ColumnName="RightValue" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.City">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CountryRef" ColumnName="CountryRef" />
+          <ScalarProperty Name="StateRef" ColumnName="StateRef" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserRef" ColumnName="UserRef" />
+          <ScalarProperty Name="CommentText" ColumnName="CommentText" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="ApplicationRef" ColumnName="ApplicationRef" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="IsMarkAsSafe" ColumnName="IsMarkAsSafe" />
+          <ScalarProperty Name="IsSpam" ColumnName="IsSpam" />
+          <ScalarProperty Name="IsInappropriateLanguage" ColumnName="IsInappropriateLanguage" />
+          <ScalarProperty Name="IsPostedByDeveloper" ColumnName="IsPostedByDeveloper" />
+          <ScalarProperty Name="IsPostedByAdmin" ColumnName="IsPostedByAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="UserOwnerId" ColumnName="UserOwnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentPages">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.ContentPage">
+        <MappingFragment StoreEntitySet="ContentPages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ShowInMenu" ColumnName="ShowInMenu" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favorites">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Favorite">
+        <MappingFragment StoreEntitySet="Favorites">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenderTypes">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.GenderType">
+        <MappingFragment StoreEntitySet="GenderType">
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memberships">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Membership">
+        <MappingFragment StoreEntitySet="Memberships">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowsStart" ColumnName="FailedPasswordAnswerAttemptWindowsStart" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FromUserRef" ColumnName="FromUserRef" />
+          <ScalarProperty Name="ToUserRef" ColumnName="ToUserRef" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ReplyToMessageId" ColumnName="ReplyToMessageId" />
+          <ScalarProperty Name="IsReplied" ColumnName="IsReplied" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ReadOn" ColumnName="ReadOn" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OSPlatforms">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.OSPlatform">
+        <MappingFragment StoreEntitySet="OSPlatforms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OSVersions">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.OSVersion">
+        <MappingFragment StoreEntitySet="OSVersions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OSPlatformRef" ColumnName="OSPlatformRef" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneBrands">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.PhoneBrand">
+        <MappingFragment StoreEntitySet="PhoneBrands">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OSPlatformRef" ColumnName="OSPlatformRef" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Profile">
+        <MappingFragment StoreEntitySet="Profiles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="PropertyValueStrings" ColumnName="PropertyValueStrings" />
+          <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.Slider">
+        <MappingFragment StoreEntitySet="Sliders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="ApplicationRef" ColumnName="ApplicationRef" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="MarkForDeletion" ColumnName="MarkForDeletion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryRef" ColumnName="CountryRef" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="UserType1" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Application_OSVersions" TypeName="CompareAppsBDModel.Application_OSVersions" StoreEntitySet="Application_OSVersions">
+      <EndProperty Name="Applications_OSPlatforms">
+        <ScalarProperty Name="Id" ColumnName="ApplicationRef" />
+      </EndProperty>
+      <EndProperty Name="OSVersions">
+        <ScalarProperty Name="Id" ColumnName="OSVersionRef" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UsersInRoles" TypeName="CompareAppsBDModel.UsersInRoles" StoreEntitySet="UsersInRoles">
+      <EndProperty Name="Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="Users">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="RegisteredUsers">
+      <EntityTypeMapping TypeName="CompareAppsBDModel.RegisteredUser">
+        <MappingFragment StoreEntitySet="RegisteredUser">
+          <ScalarProperty Name="PhoneMakeOrModel" ColumnName="PhoneMakeOrModel" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RegUID" ColumnName="RegUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

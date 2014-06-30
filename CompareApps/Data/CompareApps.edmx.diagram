@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="687a93ac69e042089e4ae7d7645349e6" Name="Diagram1">
+        <EntityTypeShape EntityType="CompareAppsBDModel.Advertisement" Width="1.5" PointX="12" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.AppDeveloper" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Application" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Applications_OSPlatforms" Width="1.5" PointX="12" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.ApplicationsnApp" Width="1.5" PointX="8" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.BrandType" Width="1.5" PointX="14.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Category" Width="1.5" PointX="5.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.City" Width="1.5" PointX="15.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Comment" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Company" Width="1.5" PointX="5.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.ContentPage" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Country" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Favorite" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.GenderType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Membership" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Message" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.OSPlatform" Width="1.5" PointX="9.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.OSVersion" Width="1.5" PointX="14.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.PhoneBrand" Width="1.5" PointX="12" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Profile" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Role" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.Slider" Width="1.5" PointX="7.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.State" Width="1.5" PointX="13" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.User" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.UserType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_Advertisements_OSPlatforms" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.MembershipEntity_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.RoleEntity_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.User_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_Applications_OSPlatforms_OSPlatforms" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_ApplicationsnApps_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_ApplicationsnApps_Companies" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_BrandTypes_PhoneBrands" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_Categories_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_Cities_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_Cities_States" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_States_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.MembershipEntity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_OSVersions_OSPlatforms" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.FK_PhoneBrands_OSPlatforms" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.ProfileEntity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.Application_OSVersions" ManuallyRouted="false" />
+        <AssociationConnector Association="CompareAppsBDModel.UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CompareAppsBDModel.RegisteredUser" Width="1.5" PointX="0.20224150465905738" PointY="6.9524437370488625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

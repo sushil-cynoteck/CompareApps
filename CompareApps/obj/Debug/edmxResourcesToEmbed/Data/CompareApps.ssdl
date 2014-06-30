@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CompareAppsBDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CompareAppsBDModelStoreContainer">
+    <EntitySet Name="Advertisements" EntityType="CompareAppsBDModel.Store.Advertisements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AppDeveloper" EntityType="CompareAppsBDModel.Store.AppDeveloper" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Application_OSVersions" EntityType="CompareAppsBDModel.Store.Application_OSVersions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Applications" EntityType="CompareAppsBDModel.Store.Applications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Applications_OSPlatforms" EntityType="CompareAppsBDModel.Store.Applications_OSPlatforms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ApplicationsnApps" EntityType="CompareAppsBDModel.Store.ApplicationsnApps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BrandTypes" EntityType="CompareAppsBDModel.Store.BrandTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="CompareAppsBDModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="CompareAppsBDModel.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="CompareAppsBDModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companies" EntityType="CompareAppsBDModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContentPages" EntityType="CompareAppsBDModel.Store.ContentPages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="CompareAppsBDModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Favorites" EntityType="CompareAppsBDModel.Store.Favorites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GenderType" EntityType="CompareAppsBDModel.Store.GenderType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Memberships" EntityType="CompareAppsBDModel.Store.Memberships" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="CompareAppsBDModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OSPlatforms" EntityType="CompareAppsBDModel.Store.OSPlatforms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OSVersions" EntityType="CompareAppsBDModel.Store.OSVersions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhoneBrands" EntityType="CompareAppsBDModel.Store.PhoneBrands" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Profiles" EntityType="CompareAppsBDModel.Store.Profiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegisteredUser" EntityType="CompareAppsBDModel.Store.RegisteredUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="CompareAppsBDModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sliders" EntityType="CompareAppsBDModel.Store.Sliders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="CompareAppsBDModel.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="CompareAppsBDModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersInRoles" EntityType="CompareAppsBDModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserType" EntityType="CompareAppsBDModel.Store.UserType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Advertisements_OSPlatforms" Association="CompareAppsBDModel.Store.FK_Advertisements_OSPlatforms">
+      <End Role="OSPlatforms" EntitySet="OSPlatforms" />
+      <End Role="Advertisements" EntitySet="Advertisements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Application_OSVersions_Applications_OSPlatforms" Association="CompareAppsBDModel.Store.FK_Application_OSVersions_Applications_OSPlatforms">
+      <End Role="Applications_OSPlatforms" EntitySet="Applications_OSPlatforms" />
+      <End Role="Application_OSVersions" EntitySet="Application_OSVersions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Application_OSVersions_OSVersions" Association="CompareAppsBDModel.Store.FK_Application_OSVersions_OSVersions">
+      <End Role="OSVersions" EntitySet="OSVersions" />
+      <End Role="Application_OSVersions" EntitySet="Application_OSVersions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_OSPlatforms_OSPlatforms" Association="CompareAppsBDModel.Store.FK_Applications_OSPlatforms_OSPlatforms">
+      <End Role="OSPlatforms" EntitySet="OSPlatforms" />
+      <End Role="Applications_OSPlatforms" EntitySet="Applications_OSPlatforms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationsnApps_Categories" Association="CompareAppsBDModel.Store.FK_ApplicationsnApps_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="ApplicationsnApps" EntitySet="ApplicationsnApps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationsnApps_Companies" Association="CompareAppsBDModel.Store.FK_ApplicationsnApps_Companies">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="ApplicationsnApps" EntitySet="ApplicationsnApps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BrandTypes_PhoneBrands" Association="CompareAppsBDModel.Store.FK_BrandTypes_PhoneBrands">
+      <End Role="PhoneBrands" EntitySet="PhoneBrands" />
+      <End Role="BrandTypes" EntitySet="BrandTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categories_Categories" Association="CompareAppsBDModel.Store.FK_Categories_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Categories1" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_Countries" Association="CompareAppsBDModel.Store.FK_Cities_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Cities" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_States" Association="CompareAppsBDModel.Store.FK_Cities_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="Cities" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OSVersions_OSPlatforms" Association="CompareAppsBDModel.Store.FK_OSVersions_OSPlatforms">
+      <End Role="OSPlatforms" EntitySet="OSPlatforms" />
+      <End Role="OSVersions" EntitySet="OSVersions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhoneBrands_OSPlatforms" Association="CompareAppsBDModel.Store.FK_PhoneBrands_OSPlatforms">
+      <End Role="OSPlatforms" EntitySet="OSPlatforms" />
+      <End Role="PhoneBrands" EntitySet="PhoneBrands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_States_Countries" Association="CompareAppsBDModel.Store.FK_States_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_Application" Association="CompareAppsBDModel.Store.MembershipEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipEntity_User" Association="CompareAppsBDModel.Store.MembershipEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="ProfileEntity_User" Association="CompareAppsBDModel.Store.ProfileEntity_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="RoleEntity_Application" Association="CompareAppsBDModel.Store.RoleEntity_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="User_Application" Association="CompareAppsBDModel.Store.User_Application">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRole_Role" Association="CompareAppsBDModel.Store.UsersInRole_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRole_User" Association="CompareAppsBDModel.Store.UsersInRole_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Advertisements">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Link" Type="ntext" />
+    <Property Name="FileUrl" Type="ntext" />
+    <Property Name="Code" Type="ntext" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="OSPlatformRef" Type="int" Nullable="false" />
+    <Property Name="IsTop" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppDeveloper">
+    <Key>
+      <PropertyRef Name="AppDevID" />
+    </Key>
+    <Property Name="AppDevID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserNameORCompanyName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="CompareAppsURL" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Web" Type="nvarchar(max)" />
+    <Property Name="AddressLine1" Type="nvarchar(max)" />
+    <Property Name="AddressLine2" Type="nvarchar(max)" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="StateID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+  </EntityType>
+  <EntityType Name="Application_OSVersions">
+    <Key>
+      <PropertyRef Name="ApplicationRef" />
+      <PropertyRef Name="OSVersionRef" />
+    </Key>
+    <Property Name="ApplicationRef" Type="int" Nullable="false" />
+    <Property Name="OSVersionRef" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="235" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Applications_OSPlatforms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationRef" Type="int" Nullable="false" />
+    <Property Name="OSPlatformRef" Type="int" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="VersionVariesWithDevice" Type="bit" Nullable="false" />
+    <Property Name="Permissions" Type="text" />
+    <Property Name="Size" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="SizeVariesWithDevice" Type="bit" Nullable="false" />
+    <Property Name="MarketURL" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="PriceUSD" Type="float" Nullable="false" />
+    <Property Name="PriceEUR" Type="float" Nullable="false" />
+    <Property Name="ReleaseDate" Type="date" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+    <Property Name="Video" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ApplicationsnApps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="ntext" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="InfoUrlFacebook" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="InfoUrlTwitter" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Developer" Type="int" Nullable="false" />
+    <Property Name="SiteUrl" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Icon" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="CategoryRef" Type="int" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+    <Property Name="OSPlatforms" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BrandTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PhoneBrandRef" Type="int" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentRef" Type="int" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="LeftValue" Type="int" Nullable="false" />
+    <Property Name="RightValue" Type="int" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CountryRef" Type="int" Nullable="false" />
+    <Property Name="StateRef" Type="int" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserRef" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CommentText" Type="ntext" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime" Nullable="false" />
+    <Property Name="ApplicationRef" Type="int" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="IsMarkAsSafe" Type="bit" Nullable="false" />
+    <Property Name="IsSpam" Type="bit" Nullable="false" />
+    <Property Name="IsInappropriateLanguage" Type="bit" Nullable="false" />
+    <Property Name="IsPostedByDeveloper" Type="bit" Nullable="false" />
+    <Property Name="IsPostedByAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Logo" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Info" Type="ntext" Nullable="false" />
+    <Property Name="UserOwnerId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContentPages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Alias" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="Content" Type="ntext" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="ShowInMenu" Type="bit" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Favorites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="AppId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="GenderType">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Memberships">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FromUserRef" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ToUserRef" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Content" Type="ntext" Nullable="false" />
+    <Property Name="ReplyToMessageId" Type="int" Nullable="false" />
+    <Property Name="IsReplied" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ReadOn" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OSPlatforms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="50" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OSVersions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="OSPlatformRef" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhoneBrands">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OSPlatformRef" Type="int" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValueStrings" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValueBinary" Type="varbinary(max)" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegisteredUser">
+    <Key>
+      <PropertyRef Name="RegUID" />
+    </Key>
+    <Property Name="RegUID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="StateID" Type="int" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="MobileNumber" Type="nvarchar" MaxLength="250" />
+    <Property Name="PhoneMakeOrModel" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Sliders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="ApplicationRef" Type="int" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="MarkForDeletion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CountryRef" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserType" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Advertisements_OSPlatforms">
+    <End Role="OSPlatforms" Type="CompareAppsBDModel.Store.OSPlatforms" Multiplicity="1" />
+    <End Role="Advertisements" Type="CompareAppsBDModel.Store.Advertisements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OSPlatforms">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisements">
+        <PropertyRef Name="OSPlatformRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Application_OSVersions_Applications_OSPlatforms">
+    <End Role="Applications_OSPlatforms" Type="CompareAppsBDModel.Store.Applications_OSPlatforms" Multiplicity="1" />
+    <End Role="Application_OSVersions" Type="CompareAppsBDModel.Store.Application_OSVersions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications_OSPlatforms">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Application_OSVersions">
+        <PropertyRef Name="ApplicationRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Application_OSVersions_OSVersions">
+    <End Role="OSVersions" Type="CompareAppsBDModel.Store.OSVersions" Multiplicity="1" />
+    <End Role="Application_OSVersions" Type="CompareAppsBDModel.Store.Application_OSVersions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OSVersions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Application_OSVersions">
+        <PropertyRef Name="OSVersionRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_OSPlatforms_OSPlatforms">
+    <End Role="OSPlatforms" Type="CompareAppsBDModel.Store.OSPlatforms" Multiplicity="1" />
+    <End Role="Applications_OSPlatforms" Type="CompareAppsBDModel.Store.Applications_OSPlatforms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OSPlatforms">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applications_OSPlatforms">
+        <PropertyRef Name="OSPlatformRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationsnApps_Categories">
+    <End Role="Categories" Type="CompareAppsBDModel.Store.Categories" Multiplicity="1" />
+    <End Role="ApplicationsnApps" Type="CompareAppsBDModel.Store.ApplicationsnApps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationsnApps">
+        <PropertyRef Name="CategoryRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationsnApps_Companies">
+    <End Role="Companies" Type="CompareAppsBDModel.Store.Companies" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApplicationsnApps" Type="CompareAppsBDModel.Store.ApplicationsnApps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationsnApps">
+        <PropertyRef Name="Developer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BrandTypes_PhoneBrands">
+    <End Role="PhoneBrands" Type="CompareAppsBDModel.Store.PhoneBrands" Multiplicity="1" />
+    <End Role="BrandTypes" Type="CompareAppsBDModel.Store.BrandTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhoneBrands">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BrandTypes">
+        <PropertyRef Name="PhoneBrandRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categories_Categories">
+    <End Role="Categories" Type="CompareAppsBDModel.Store.Categories" Multiplicity="0..1" />
+    <End Role="Categories1" Type="CompareAppsBDModel.Store.Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Categories1">
+        <PropertyRef Name="ParentRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_Countries">
+    <End Role="Countries" Type="CompareAppsBDModel.Store.Countries" Multiplicity="1" />
+    <End Role="Cities" Type="CompareAppsBDModel.Store.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cities">
+        <PropertyRef Name="CountryRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_States">
+    <End Role="States" Type="CompareAppsBDModel.Store.States" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cities" Type="CompareAppsBDModel.Store.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cities">
+        <PropertyRef Name="StateRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OSVersions_OSPlatforms">
+    <End Role="OSPlatforms" Type="CompareAppsBDModel.Store.OSPlatforms" Multiplicity="1" />
+    <End Role="OSVersions" Type="CompareAppsBDModel.Store.OSVersions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OSPlatforms">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OSVersions">
+        <PropertyRef Name="OSPlatformRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhoneBrands_OSPlatforms">
+    <End Role="OSPlatforms" Type="CompareAppsBDModel.Store.OSPlatforms" Multiplicity="1" />
+    <End Role="PhoneBrands" Type="CompareAppsBDModel.Store.PhoneBrands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OSPlatforms">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneBrands">
+        <PropertyRef Name="OSPlatformRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_States_Countries">
+    <End Role="Countries" Type="CompareAppsBDModel.Store.Countries" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="States" Type="CompareAppsBDModel.Store.States" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="States">
+        <PropertyRef Name="CountryRef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_Application">
+    <End Role="Applications" Type="CompareAppsBDModel.Store.Applications" Multiplicity="1" />
+    <End Role="Memberships" Type="CompareAppsBDModel.Store.Memberships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipEntity_User">
+    <End Role="Users" Type="CompareAppsBDModel.Store.Users" Multiplicity="1" />
+    <End Role="Memberships" Type="CompareAppsBDModel.Store.Memberships" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProfileEntity_User">
+    <End Role="Users" Type="CompareAppsBDModel.Store.Users" Multiplicity="1" />
+    <End Role="Profiles" Type="CompareAppsBDModel.Store.Profiles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleEntity_Application">
+    <End Role="Applications" Type="CompareAppsBDModel.Store.Applications" Multiplicity="1" />
+    <End Role="Roles" Type="CompareAppsBDModel.Store.Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="User_Application">
+    <End Role="Applications" Type="CompareAppsBDModel.Store.Applications" Multiplicity="1" />
+    <End Role="Users" Type="CompareAppsBDModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRole_Role">
+    <End Role="Roles" Type="CompareAppsBDModel.Store.Roles" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="CompareAppsBDModel.Store.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRole_User">
+    <End Role="Users" Type="CompareAppsBDModel.Store.Users" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="CompareAppsBDModel.Store.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
